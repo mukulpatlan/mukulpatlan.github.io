@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'rb-recipe-start',
   template: `
-    <h1>PLease Select A Recipe<h1>
+    <h2>Please select a Recipe<h2>
   `,
   styles: []
 })
