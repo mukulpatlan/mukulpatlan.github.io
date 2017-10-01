@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Recipe } from "../recipe";
-import { RecipeService } from '../recipe.service';
 import { Subscription } from 'rxjs/Rx';
-import { ShoppingListService } from "../../shopping-list";
+
+import { Recipe } from "../../models/recipe";
+import { RecipeService, ShoppingListService } from '../../shared';
 
 @Component({
   selector: 'rb-recipe-detail',

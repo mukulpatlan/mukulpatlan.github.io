@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { Ingredient } from "../shared";
-import { ShoppingListService } from './shopping-list.service';
+import { Ingredient } from "../models";
+import { ShoppingListService } from './../shared';
 
 @Component({
   selector: 'rb-shopping-list-add',

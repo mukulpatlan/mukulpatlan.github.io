@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormArray, FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule, NgForm } from '@angular/forms';
-import { RecipeService } from '../recipe.service';
 import { Subscription } from 'rxjs/Rx';
-import { Recipe } from '../recipe';
+
+import { Recipe } from '../../models/recipe';
+
+import { RecipeService } from '../../shared';
 
 @Component({
   selector: 'rb-recipe-edit',
@@ -47,7 +49,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
         name: new FormControl(name, Validators.required),
         amount: new FormControl(amount, [
           Validators.required,
-          Validators.pattern("\\d+")
+          Validators.pattern(/^[1-9]+[0-9]*$/)
         ])
       })
     );
@@ -75,7 +77,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
               name: new FormControl(this.recipe.ingredients[i].name, Validators.required),
               amount: new FormControl(this.recipe.ingredients[i].amount, [
                 Validators.required,
-                Validators.pattern("\\d+")
+                Validators.pattern(/^[1-9]+[0-9]*$/)
               ])
             })
           );

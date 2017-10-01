@@ -12,13 +12,17 @@
         <li routerLinkActive="active"><a [routerLink]="['/shopping-list']">Shopping List</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" rbDropdown>
+        <ng-template [ngIf]="!authService.isAuth()">
+          <li><a [routerLink]="['/signup']">Register</a></li>
+          <li><a [routerLink]="['/login']">Login</a></li>
+        </ng-template>
+        <li class="dropdown" rbDropdown *ngIf = "authService.isAuth()">
           <a class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">User <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Other</a></li>
+          <ul class="dropdown-menu" style="cursor: pointer;">
+            <li><a (click)="onSaveData()">Store Data</a></li>
+            <li><a (click)="onLoadData()">Load Data</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Logout</a></li>
+            <li (click)="onLogOut()"><a href="#">Logout</a></li>
           </ul>
         </li>        
       </ul>
