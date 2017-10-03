@@ -2,7 +2,7 @@ import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ToastsManager } from 'ng2-toastr';
-import { AuthService } from '../shared';
+import { AuthService } from '../../shared';
 
 @Component({
   selector: 'rb-login',
