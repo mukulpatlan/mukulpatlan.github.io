@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         .then(
           response => {
             this.toast.success('LoggedIn succesfully!');
-            this.router.navigate(['/']);
+            this.router.navigate(['/recipes']);
           },
           error => {
             this.toast.error(error.message);

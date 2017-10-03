@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ToastsManager } from 'ng2-toastr';
 import { AuthService } from '../../shared';
@@ -13,7 +14,8 @@ export class SignupComponent implements OnInit {
   	constructor(
   			private auth: AuthService,
         public toast: ToastsManager,
-        public vcr: ViewContainerRef
+        public vcr: ViewContainerRef,
+        public router: Router
         ) {
           this.toast.setRootViewContainerRef(vcr);
        }
@@ -26,6 +28,7 @@ export class SignupComponent implements OnInit {
 	  		.then(
         response => {
           this.toast.error('User account created succesfully');
+          this.router.navigate(['/auth/login']);
         },
         error => {
           this.toast.error(error.message);

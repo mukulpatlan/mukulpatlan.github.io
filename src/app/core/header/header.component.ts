@@ -1,10 +1,10 @@
 import { Component, ViewContainerRef } from '@angular/core';
 import { ToastsManager } from 'ng2-toastr';
 
-import { Recipe } from '../../../models'
-import { DataStorageService } from '../../services/data-storage.service';
-import { RecipeService } from '../../services/recipe.service';
-import { AuthService } from '../../services/auth.service';
+import { Recipe } from '../../models'
+import { DataStorageService } from '../../shared/services/data-storage.service';
+import { RecipeService } from '../../shared/services/recipe.service';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'rb-header',

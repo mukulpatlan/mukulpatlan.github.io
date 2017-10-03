@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent, SignupComponent } from './auth';
+import { LoginComponent, SignupComponent } from './';
 
 
 const AUTH_ROUTES :Routes = [

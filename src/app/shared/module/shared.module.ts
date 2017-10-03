@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastModule } from 'ng2-toastr';
 
+import { DropdownDirective } from '../dropdown.directive';
+
 @NgModule({
-	declarations: [],
+	declarations: [
+		DropdownDirective
+	],
 	imports: [
-		BrowserAnimationsModule,
     	ToastModule.forRoot()
 	],
 	exports: [
 		CommonModule,
-		BrowserAnimationsModule,
     	ToastModule
 	]
 })

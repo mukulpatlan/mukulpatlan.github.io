@@ -102,11 +102,11 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     } else {
       this.recipeService.editRecipe(this.recipe, newRecipe);
     }
-    this.navigateBack();
+    this.router.navigate(['/recipes']);
   }
 
   onCancel(){
-  	this.navigateBack();
+  	this.router.navigate(['/recipes']);
   }
 
 }
